@@ -9,8 +9,61 @@
     grid-template-rows: 2fr 8fr;
 }
 
+
+/* SIDEBAR */
+
 #sidebar{
     grid-area: 1/1/3/2;
-    border: 1px red solid;
+    padding: 30px;
+
+    
+}
+.sidebar-header, .sidebar-item{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
 }
 
+.sidebar-item{
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.sidebar-header-icon, .sidebar-text{
+    display: grid;
+    justify-content: start;
+    align-items: center;
+}
+
+.sidebar-icon{
+    display: grid;
+    place-items: center;
+}
+
+
+.sidebar-icon svg{
+    height: auto;
+    width: 50%;
+}
+
+
+.sidebar-header{
+    margin-bottom: 40px;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.sidebar-header-icon svg{
+    height: auto;
+    width: 70%;
+}
+
+
+
+
+
+
+/* HEADER */
+
+
+
+/* CONTENT */
