@@ -57,33 +57,42 @@
                     History
                 </div>
             </div>
-            <div class="sidebar-item">
+            <div class="sidebar-item settings">
                 <div class="sidebar-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>cog</title><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" /></svg>
                 </div>
-                <div class="sidebar-text">
+                <div class="sidebar-text ">
                     Settings
                 </div>
             </div>
         </div>
         <div id="header">
             <div class="header-info">
-                <img class="header-avatar" src="#">
+                <p class="main-user">IC</p>
                 <div class="header-intro">
                     <p>Welcome back,</p>
                     <h3>Ismael Carayol</h3>
                 </div>
                 <div class="header-item">
-                    <p>4.9</p>
-                    <!-- STAR ICON -->
+                    <svg class="header-icon"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>star</title><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg>
+                    <div class="header-item-text">
+                        <p>Rating</p>
+                        <p>4.9</p>
+                    </div>
                 </div>
                 <div class="header-item">
-                    <!-- DOLLAR ICON -->
-                     <p>25.350</p>
+                    <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>currency-usd</title><path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z" /></svg>
+                    <div class="header-item-text">
+                        <p>Sales</p>
+                        <p>$25,350.89</p>
+                    </div>
                 </div>
                 <div class="header-item">
-                    <!-- TROPHY ICON -->
-                     <p>#3</p>
+                    <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>trophy-outline</title><path d="M18 2C17.1 2 16 3 16 4H8C8 3 6.9 2 6 2H2V11C2 12 3 13 4 13H6.2C6.6 15 7.9 16.7 11 17V19.08C8 19.54 8 22 8 22H16C16 22 16 19.54 13 19.08V17C16.1 16.7 17.4 15 17.8 13H20C21 13 22 12 22 11V2H18M6 11H4V4H6V11M16 11.5C16 13.43 15.42 15 12 15C8.59 15 8 13.43 8 11.5V6H16V11.5M20 11H18V4H20V11Z" /></svg>
+                    <div class="header-item-text">
+                        <p>Top</p>
+                        <p>#3</p>
+                    </div>
                 </div>
             </div>
             <div class="header-action">
@@ -93,129 +102,150 @@
             </div>
         </div>
         <div id="content">
-            <div id="your-courses">
+            <div class="your-courses-container">
                 <h3 class="section-title">Your Courses</h3>
+                <div id="your-courses">
 
-                <!-- COURSE ONE -->
-                <div class="course-card">
-                    <div class="course-title">
-                        Creative Writing Mastery
+                    <!-- COURSE ONE -->
+                    <div class="course-card">
+                        <div class="course-title">
+                            Creative Writing Mastery
+                        </div>
+                        <div class="course-description">
+                            Unlock your storytelling potential with techniques to craft compelling characters, vivid scenes, and powerful narratives.
+                        </div>
+                        <div class="course-actions">
+                            <svg class="header-icon"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>star</title><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>eye-outline</title><path d="M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>share</title><path d="M21,12L14,5V9C7,10 4,15 3,20C5.5,16.5 9,14.9 14,14.9V19L21,12Z" /></svg>
+                        </div>
                     </div>
-                    <div class="course-description">
-                        Unlock your storytelling potential with techniques to craft compelling characters, vivid scenes, and powerful narratives.
-                    </div>
-                    <div class="course-actions">
-                        <!-- ICON STAR -->
-                        <!-- ICON VIEW -->
-                        <!-- ICON SHARE -->
-                    </div>
-                </div>
 
-                <!-- COURSE TWO -->
-                <div class="course-card">
-                    <div class="course-title">
-                        Intro to Web Development
+                    <!-- COURSE TWO -->
+                    <div class="course-card">
+                        <div class="course-title">
+                            Intro to Web Development
+                        </div>
+                        <div class="course-description">
+                            Learn the basics of HTML, CSS, and JavaScript to build your own responsive and interactive websites from scratch.
+                        </div>
+                        <div class="course-actions">
+                            <svg class="header-icon"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>star</title><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>eye-outline</title><path d="M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>share</title><path d="M21,12L14,5V9C7,10 4,15 3,20C5.5,16.5 9,14.9 14,14.9V19L21,12Z" /></svg>
+                        </div>
                     </div>
-                    <div class="course-description">
-                        Learn the basics of HTML, CSS, and JavaScript to build your own responsive and interactive websites from scratch.
+                    
+                    <!-- COURSE THREE -->
+                    <div class="course-card">
+                        <div class="course-title">
+                            Digital Photography for Beginners
+                        </div>
+                        <div class="course-description">
+                            Discover how to take stunning photos using manual settings, lighting principles, and composition techniques.
+                        </div>
+                        <div class="course-actions">
+                            <svg class="header-icon"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>star</title><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>eye-outline</title><path d="M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>share</title><path d="M21,12L14,5V9C7,10 4,15 3,20C5.5,16.5 9,14.9 14,14.9V19L21,12Z" /></svg>
+                        </div>
                     </div>
-                    <div class="course-actions">
-                        <!-- ICON STAR -->
-                        <!-- ICON VIEW -->
-                        <!-- ICON SHARE -->
+                    
+                    <!-- COURSE FOUR -->
+                    <div class="course-card">
+                        <div class="course-title">
+                            Personal Finance 101
+                        </div>
+                        <div class="course-description">
+                            Understand budgeting, saving, investing, and debt management to take control of your financial future.
+                        </div>
+                        <div class="course-actions">
+                            <svg class="header-icon"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>star</title><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>eye-outline</title><path d="M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>share</title><path d="M21,12L14,5V9C7,10 4,15 3,20C5.5,16.5 9,14.9 14,14.9V19L21,12Z" /></svg>
+                        </div>
                     </div>
-                </div>
                 
-                <!-- COURSE THREE -->
-                <div class="course-card">
-                    <div class="course-title">
-                        Digital Photography for Beginners
-                    </div>
-                    <div class="course-description">
-                        Discover how to take stunning photos using manual settings, lighting principles, and composition techniques.
-                    </div>
-                    <div class="course-actions">
-                        <!-- ICON STAR -->
-                        <!-- ICON VIEW -->
-                        <!-- ICON SHARE -->
-                    </div>
-                </div>
-                
-                <!-- COURSE FOUR -->
-                <div class="course-card">
-                    <div class="course-title">
-                        Personal Finance 101
-                    </div>
-                    <div class="course-description">
-                        Understand budgeting, saving, investing, and debt management to take control of your financial future.
-                    </div>
-                    <div class="course-actions">
-                        <!-- ICON STAR -->
-                        <!-- ICON VIEW -->
-                        <!-- ICON SHARE -->
-                    </div>
-                </div>
-                
-                <!-- COURSE FIVE -->
-                <div class="course-card">
-                    <div class="course-title">
-                        Mindfulness & Meditation Essentials
-                    </div>
-                    <div class="course-description">
-                        Build a daily mindfulness practice to reduce stress, improve focus, and increase emotional well-being.
-                    </div>
-                    <div class="course-actions">
-                        <!-- ICON STAR -->
-                        <!-- ICON VIEW -->
-                        <!-- ICON SHARE -->
+                    <!-- COURSE FIVE -->
+                    <div class="course-card">
+                        <div class="course-title">
+                            Mindfulness & Meditation Essentials
+                        </div>
+                        <div class="course-description">
+                            Build a daily mindfulness practice to reduce stress, improve focus, and increase emotional well-being.
+                        </div>
+                        <div class="course-actions">
+                            <svg class="header-icon"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>star</title><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>eye-outline</title><path d="M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>share</title><path d="M21,12L14,5V9C7,10 4,15 3,20C5.5,16.5 9,14.9 14,14.9V19L21,12Z" /></svg>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="review">
+            
+            <div class="review-container">
                 <h3 class="section-title">Last Week's Review</h3>
-                <div class="review-item">
-                    <!-- VIEWS ICON -->
-                    <div class="review-text">
-
+                <div id="review">
+                    <div class="review-item">
+                        <!-- VIEWS ICON -->
+                        <svg class="review-icon"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>eye-outline</title><path d="M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9M12,4.5C17,4.5 21.27,7.61 23,12C21.27,16.39 17,19.5 12,19.5C7,19.5 2.73,16.39 1,12C2.73,7.61 7,4.5 12,4.5M3.18,12C4.83,15.36 8.24,17.5 12,17.5C15.76,17.5 19.17,15.36 20.82,12C19.17,8.64 15.76,6.5 12,6.5C8.24,6.5 4.83,8.64 3.18,12Z" /></svg>
+                        <div class="review-text">
+                            3,239 new views
+                        </div>
                     </div>
-                </div>
-                <div class="review-item">
-                    <!-- RATINGS ICON -->
-                    <div class="review-text">
-                        
+                    <div class="review-item">
+                        <!-- RATINGS ICON -->
+                        <svg class="review-icon"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>star</title><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg>
+                        <div class="review-text">
+                            4.5 overall score in 23 Reviews
+                        </div>
                     </div>
-                </div>
-                <div class="review-item">
-                    <!-- SALES ICON -->
-                    <div class="review-text">
-                        
+                    <div class="review-item">
+                        <!-- SALES ICON -->
+                        <svg class="review-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>currency-usd</title><path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z" /></svg>
+                        <div class="review-text">
+                            $335 in all your courses
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="comments">
+            
+            <div class="comments-container">
                 <h3 class="section-title">Last Comments</h3>
-                <div class="comments-item">
-                    <!-- USER AVATAR -->
-                    <div class="comments-text">
+                <div id="comments">
+                    <div class="comments-item">
+                        <!-- USER AVATAR -->
+                        <div class="user-avatar">R</div>
 
+                        <div class="comments-text">
+                            <p class="user-name">Remerson</p>
+                            <p>Finally I could understand what an API is!</p>
+                        </div>
                     </div>
-                </div>
-                <div class="comments-item">
-                    <!-- USER AVATAR -->
-                    <div class="comments-text">
+                    <div class="comments-item">
+                        <!-- USER AVATAR -->
+                        <div class="user-avatar">T</div>
 
+                        <div class="comments-text">
+                            <p class="user-name">Tania</p>
+                            <p> I think algorithms could be better explained</p>
+                        </div>
                     </div>
-                </div>
-                <div class="comments-item">
-                    <!-- USER AVATAR -->
-                    <div class="comments-text">
-
+                    <div class="comments-item">
+                        <!-- USER AVATAR -->
+                        <div class="user-avatar">E</div>
+                        <div class="comments-text">
+                            <p class="user-name">Edgar</p>
+                            <p>Love it!</p>
+                        </div>
                     </div>
-                </div>
-                <div class="comments-item">
-                    <!-- USER AVATAR -->
-                    <div class="comments-text">
-
+                    <div class="comments-item">
+                        <!-- USER AVATAR -->
+                        <div class="user-avatar">A</div>
+                        <div class="comments-text">
+                            <p class="user-name">Aurora</p>
+                            <p>This course is so interesting!</p>
+                        </div>
                     </div>
                 </div>
             </div>
