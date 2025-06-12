@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Library</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <script defer src="./script.js"></script>
+</head>
+<body>
+    <div id="app-container">
+        <button id="add-book">New Book</button>
+        <modal id="add-book-modal">
+            <form id="add-book-form">
+                <label for="title" name="title">Title: </label>
+                <input name="title" required>
+                <label for="author">Author: </label>
+                <input name="author" required>
+            </form>
+        </modal>
+        <div id="book-display"></div>
+    </div>
+</body>
+</html>
