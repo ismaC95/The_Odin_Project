@@ -80,6 +80,7 @@ addBookBtn.onclick = () => {
 
 cancelAddBook.onclick = () => {
   addBookModal.close();
+  addBookForm.reset();
 };
 
 //add books through the modal
@@ -90,6 +91,7 @@ addBookForm.addEventListener("submit", (e) => {
 
   addBookToLibrary(title, author);
   addBookModal.close();
+  addBookForm.reset();
   console.log(myLibrary);
   displayBooks();
 });
