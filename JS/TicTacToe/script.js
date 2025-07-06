@@ -43,7 +43,16 @@ function createGameboard() {
     return checkRow(row) || checkCol(col) || checkDiagonal();
   }
 
-  return { getBoard, placeMark, resetBoard, checkWinner };
+  function checkTie() {
+    for (let row = 0; row < 3; row++) {
+      for (let col = 0; col < 3; col++) {
+        if (board[row][col] === "") return false;
+      }
+    }
+    return true;
+  }
+
+  return { getBoard, placeMark, resetBoard, checkWinner, checkTie };
 }
 
 // Players objects and game flow object
@@ -53,9 +62,6 @@ function createPlayer(name, mark) {
 }
 
 function createGameController(playerOneName, playerTwoName) {
-  // const playerOne = createPlayer(playerOneName, "X");
-  // const playerTwo = createPlayer(playerTwoName, "O");
-
   const players = [
     createPlayer(playerOneName, "X"),
     createPlayer(playerTwoName, "O"),
@@ -63,14 +69,33 @@ function createGameController(playerOneName, playerTwoName) {
   const gameBoard = createGameboard();
 
   let turnIndex = 0;
+  let isThereWinner = false;
+  let isTie = false;
 
   function playRound(row, col) {
     const player = players[turnIndex % players.length];
 
+    if (isThereWinner) {
+      console.log(`You can't do another move, ${player.name} is the winner`);
+
+      return false;
+    }
+
+    if (isTie) {
+      console.log("It's a TIE! Let's play again!");
+      return false;
+    }
+
     if (gameBoard.placeMark(row, col, player.mark)) {
-      if (gameBoard.checkWinner(row, col))
+      if (gameBoard.checkWinner(row, col)) {
         console.log(`Congrats, ${player.name} has won`);
-      turnIndex++;
+        isThereWinner = true;
+      } else if (gameBoard.checkTie()) {
+        console.log("It's a TIE! Let's play again!");
+        isTie = true;
+      } else {
+        turnIndex++;
+      }
 
       return true;
     } else {
@@ -78,32 +103,6 @@ function createGameController(playerOneName, playerTwoName) {
       return false;
     }
   }
-  // function playRound(row, col) {
-  //   mark = currentPlayer.mark;
-  //   if (currentPlayer === playerOne) {
-  //     if (gameBoard.placeMark(row, col, mark)) {
-  //       if (gameBoard.checkWinner(row, col))
-  //         console.log(`Congrats, ${currentPlayer.name} has won`);
-
-  //       currentPlayer = playerTwo;
-  //       return true;
-  //     } else {
-  //       console.log("That cell is not available");
-  //       return false;
-  //     }
-  //   } else {
-  //     //segundo if es mejorable
-  //     if (gameBoard.placeMark(row, col, mark)) {
-  //       if (gameBoard.checkWinner(row, col))
-  //         console.log(`Congrats, ${currentPlayer.name} has won`);
-  //       currentPlayer = playerOne;
-  //       return true;
-  //     } else {
-  //       console.log("That cell is not available");
-  //       return false;
-  //     }
-  //   }
-  // }
 
   return {
     playRound,
@@ -111,34 +110,15 @@ function createGameController(playerOneName, playerTwoName) {
   };
 }
 
-const game = createGameController("Ismael", "Tania", "Javi");
+const game = createGameController("Ismael", "Tania");
 
+//Missing what happens once a player wins
 game.playRound(0, 0);
-game.playRound(1, 0);
+game.playRound(0, 1);
+game.playRound(0, 2);
 game.playRound(1, 1);
+game.playRound(1, 0);
 game.playRound(1, 2);
+game.playRound(2, 1);
+game.playRound(2, 0);
 game.playRound(2, 2);
-
-// console.log(game.getBoard());
-
-// NOT WORKING
-// if (countX === 3) console.log(`${playerOne.name} is the winner`);
-//         else if (countO === 3) console.log(`${playerTwo.name} is the winner`);
-//         else {
-//           if (currentBoard[i][j].mark === "X"){
-//             do{
-//               i++
-//               countX++
-//             }while(currentBoard[i][j].mark === "X" || countX === 3 || i === 3);
-//             //same for j++ to check column and i++ and j++ to check diagonal
-//             //return false when we don't have any winning criteria
-//             // do same with O
-//             // for sure that can be refactored to improve the code
-//           }
-//           else if (currentBoard[i][j].mark === "O") countO++;
-//         }
-
-// if (currentBoard[i][j] === "X") countX++;
-//       else if (currentBoard[i][j] === "O") countO++;
-//     if (countX === 3) console.log(`${playerOne.name} is the winner`);
-//     if (countO === 3) console.log(`${playerTwo.name} is the winner`);
