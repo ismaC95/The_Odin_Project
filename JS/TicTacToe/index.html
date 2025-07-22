@@ -8,6 +8,41 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    
+    <h1>Shitty Tic Tac Toe</h1>
+        <form id="playerForm" class="playerNames">
+            <div class="namesContainer">
+                <div class="inputNames">
+                    <label for="player1">Player One:</label>
+                    <input type="text" id="player1" minlength="3">
+                </div>
+                <div class="inputNames">
+                    <label for="player2">Player Two:</label>
+                    <input type="text" id="player2" minlength="3">
+                </div>
+            </div>
+            <button type="submit">Enter Players</button>
+        </form>
+        <div id="namesAlert"></div> 
+    <div class="container">
+        
+        <div class="row">
+            <div class="cell"><button class="cell-action"></button></div>
+            <div class="cell"><button class="cell-action"></button></div>
+            <div class="cell"><button class="cell-action"></button></div>
+        </div>
+        <div class="row">
+            <div class="cell"><button class="cell-action"></button></div>
+            <div class="cell"><button class="cell-action"></button></div>
+            <div class="cell"><button class="cell-action"></button></div>
+        </div>
+        <div class="row">
+            <div class="cell"><button class="cell-action"></button></div>
+            <div class="cell"><button class="cell-action"></button></div>
+            <div class="cell"><button class="cell-action"></button></div>
+        </div>
+        <div id="alert"></div>
+    <button id="restartBtn">Restart Game</button>
+
+    </div>
 </body>
 </html>

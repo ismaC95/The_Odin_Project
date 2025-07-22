@@ -1,3 +1,15 @@
+// DOM consts
+const cells = document.querySelectorAll(".cell-action");
+const restartBtn = document.getElementById("restartBtn");
+const gameAlert = document.getElementById("alert");
+const playerForm = document.getElementById("playerForm");
+const playerOneName = document.getElementById("player1").value;
+const playerTwoName = document.getElementById("player2").value;
+const playerAlert = document.getElementById("namesAlert");
+
+let game = null;
+
+//functionality
 function createGameboard() {
   const board = [
     ["", "", ""],
@@ -5,7 +17,7 @@ function createGameboard() {
     ["", "", ""],
   ];
 
-  const getBoard = () => console.log(board);
+  const getBoard = () => board;
 
   const placeMark = (row, col, mark) => {
     if (board[row][col] === "") {
@@ -52,7 +64,7 @@ function createGameboard() {
     return true;
   }
 
-  return { getBoard, placeMark, resetBoard, checkWinner, checkTie };
+  return { board, getBoard, placeMark, resetBoard, checkWinner, checkTie };
 }
 
 // Players objects and game flow object
@@ -88,10 +100,17 @@ function createGameController(playerOneName, playerTwoName) {
 
     if (gameBoard.placeMark(row, col, player.mark)) {
       if (gameBoard.checkWinner(row, col)) {
-        console.log(`Congrats, ${player.name} has won`);
+        const winnerAlert = document.createTextNode(
+          `Congrats, ${player.name} has won!`
+        );
+        gameAlert.appendChild(winnerAlert);
         isThereWinner = true;
       } else if (gameBoard.checkTie()) {
-        console.log("It's a TIE! Let's play again!");
+        const tieAlert = document.createTextNode(
+          "It's a TIE! Let's play again!"
+        );
+        gameAlert.appendChild(tieAlert);
+
         isTie = true;
       } else {
         turnIndex++;
@@ -104,21 +123,89 @@ function createGameController(playerOneName, playerTwoName) {
     }
   }
 
+  function resetGame() {
+    gameBoard.resetBoard(); // resets the board array
+    isThereWinner = false;
+    isTie = false;
+    turnIndex = 0;
+    gameAlert.textContent = "";
+  }
+
   return {
     playRound,
     getBoard: gameBoard.getBoard,
+    resetGame,
   };
 }
 
-const game = createGameController("Ismael", "Tania");
+//DOM control
 
-//Missing what happens once a player wins
-game.playRound(0, 0);
-game.playRound(0, 1);
-game.playRound(0, 2);
-game.playRound(1, 1);
-game.playRound(1, 0);
-game.playRound(1, 2);
-game.playRound(2, 1);
-game.playRound(2, 0);
-game.playRound(2, 2);
+function displayController() {
+  playerForm.addEventListener("submit", (e) => {
+    e.preventDefault(); // prevent page reload
+
+    const playerOneName = document.getElementById("player1").value.trim();
+    const playerTwoName = document.getElementById("player2").value.trim();
+
+    // Clear previous alerts
+    playerAlert.textContent = "";
+    gameAlert.textContent = "";
+
+    if (playerOneName.length < 3 || playerTwoName.length < 3) {
+      playerAlert.textContent =
+        "Please enter at least 3 characters for each player.";
+      return;
+    }
+
+    game = createGameController(playerOneName, playerTwoName);
+
+    playerAlert.textContent = `Player One: ${playerOneName}, Player Two: ${playerTwoName}`;
+
+    renderBoard(game.getBoard());
+  });
+
+  //take the array position and make it the attribute
+  cells.forEach((cell, index) => {
+    const row = Math.floor(index / 3);
+    const col = index % 3;
+    cell.setAttribute("data-row", row);
+    cell.setAttribute("data-col", col);
+  });
+
+  function renderBoard(board) {
+    cells.forEach((cell, index) => {
+      const row = Math.floor(index / 3);
+      const col = index % 3;
+      cell.textContent = board[row][col];
+    });
+  }
+
+  //translate the board to the divs in the web on each click using placemark
+  cells.forEach((cell) => {
+    cell.addEventListener("click", () => {
+      if (!game) {
+        playerAlert.textContent = "Please enter player names to start!";
+        return;
+      }
+
+      const cellRow = parseInt(cell.getAttribute("data-row"));
+      const cellCol = parseInt(cell.getAttribute("data-col"));
+      console.log(`row is: ${cellRow}, col is: ${cellCol}`);
+
+      //Game functionality
+      if (game.playRound(cellRow, cellCol)) renderBoard(game.getBoard());
+    });
+  });
+
+  //restart game
+  restartBtn.addEventListener("click", () => {
+    if (game) {
+      game.resetGame();
+      renderBoard(game.getBoard());
+      gameAlert.textContent = "";
+    }
+    playerAlert.textContent = "";
+  });
+}
+
+displayController();
